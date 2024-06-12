@@ -9,8 +9,3 @@ Date.now = function () {
     }
     return clonedNow.apply(this, []);
 };
-// now
-// console.log(Date.now())
-// sample of havoc to be caused
-// - Date.now() -> can return a date 1 day ago
-// show date.now in demo and show redirect to code in the event someone tries to investigate

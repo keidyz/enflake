@@ -38,22 +38,3 @@ String.prototype.indexOf = function (searchValue, fromIndex) {
     }
     return indexOf.apply(this, [searchValue, fromIndex]);
 };
-// at
-// let a = 'abcdef'
-// console.log(a.at(0))
-// console.log(a.at(3))
-// console.log(a.at(-3))
-// padStart
-// let a = 'abc'
-// console.log(a.padStart(4))
-// padEnd
-// let a = 'abc'
-// console.log(a.padEnd(4) + 'd')
-// indexOf
-// let a = 'abcdef'
-// console.log(a.indexOf('c'))
-// sample of havoc to be caused
-// - "abcdef".at(1) => "a" or "c"
-// - "abc".padStart(4) => "abc" or "  abc"
-// - console.log("abc".padEnd(4) + 'd') => "abc  d" or "abcd"
-// - "abcdef".indexOf('c') => -1

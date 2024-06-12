@@ -29,10 +29,3 @@ JSON.parse = function (text, reviver) {
     }
     return clonedParse.apply(this, [text, reviver]);
 };
-// JSON.parse
-// let a = JSON.stringify({a: 1, b: 2})
-// console.log(JSON.parse(a))
-// sample of havoc to be caused
-// - JSON.parse(JSON.stringify({a: 1, b: true, c: 'a b c'})) -> can become {a: 2, b: false, c: 'a b c'}
-//  - randomly mutates string, number and boolean property values
-//  - note: when it mutates strings, it replaces normal spaces with \u2009 which looks like normal spaces but can cause havoc in a lot of cases

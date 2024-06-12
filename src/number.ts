@@ -9,8 +9,3 @@ Number.prototype.toString = function (radix) {
     }
     return clonedToString.apply(this, [radix])
 }
-// let a = 555
-// console.log(a.toString())
-
-// sample of havoc to be caused
-// - Number(555).toString() -> "554" or "556"
