@@ -1,6 +1,6 @@
 {
   "name": "enflake",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "`Enflake` is a package that alters JavaScript's core built-in standard objects such as `Array.push` and `JSON.parse` in ways that would make them act unreliably without throwing errors nor causing direct exceptions that would make issues traceable to the enflake package",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
