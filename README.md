@@ -4,7 +4,7 @@
 [Example](#example) |
 [Docs](#in-depth-list-of-havoc-to-be-caused) |
 [Contributing](#contributing)
-> An ~~astonishingly evil~~ entertaining way to wreck havoc in your node projects.
+> An ~~astonishingly evil~~ entertaining way to wreck havoc in your javascript and typescript projects.
 
 `Enflake` is a package that alters JavaScript's core built-in standard objects such as `Array.push` and `JSON.parse` in ways that would make them act unreliably- ✨ _all without throwing errors nor causing direct exceptions that would make issues traceable to the enflake package._ ✨
 
@@ -14,7 +14,7 @@ Enflake, by default, allows the flakified methods to act like they normally do m
 
 ## Selling points
 - turns popular built-in methods into unreliable versions of themselves
-- easy to insert into any node project
+- easy to insert into any js/ts project
 - very subtle
 - untraceable
 - will not cause exceptions that will be traceable to this package
