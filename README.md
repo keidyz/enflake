@@ -90,7 +90,6 @@ for(let x = 0; x < 100; x++) {
 
     // enflaked result: {
         // this looks like the same string but the space is not really a space but just one that looks like a space.
-        // You can verify this by copying the value from the expectation and searching the page for it
     //      stringSample: 'Enflaked Sample',
     //      numberSample: 99,
     //      booleanSample: false
