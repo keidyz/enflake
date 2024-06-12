@@ -1,0 +1,38 @@
+{
+  "name": "enflake",
+  "version": "1.0.0",
+  "description": "`Enflake` is a package that alters JavaScript's core built-in standard objects such as `Array.push` and `JSON.parse` in ways that would make them act unreliably without throwing errors nor causing direct exceptions that would make issues traceable to the enflake package",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "homepage": "https://github.com/keidyz/enflake",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/keidyz/enflake"
+  },
+  "scripts": {
+    "prepublish": "rm -rf dist && tsc"
+  },
+  "author": "Keisha Dy Zapra <kzapra@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "typescript": "^5.4.5"
+  },
+  "keywords": [
+    "flake",
+    "flaky",
+    "havoc",
+    "bug",
+    "chaos",
+    "destroy",
+    "joke",
+    "javascript",
+    "node",
+    "unreliable"
+  ],
+  "bugs": {
+    "url": "https://github.com/keidyz/enflake/issues"
+  },
+  "devDependencies": {
+    "@types/node": "^20.14.2"
+  }
+}
