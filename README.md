@@ -1,4 +1,9 @@
 # Enflake
+[Installation](#installation) |
+[Configuration](#configuration) |
+[Example](#example) |
+[Docs](#in-depth-list-of-havoc-to-be-caused) |
+[Contributing](#contributing)
 > An ~~astonishingly evil~~ entertaining way to wreck havoc in your node projects.
 
 `Enflake` is a package that alters JavaScript's core built-in standard objects such as `Array.push` and `JSON.parse` in ways that would make them act unreliably- ✨ _all without throwing errors nor causing direct exceptions that would make issues traceable to the enflake package._ ✨
@@ -177,7 +182,17 @@ for(let x = 0; x < 100; x++) {
      // enflaked result: -1
     ```
 
-    
+## Contributing
+Contributing is highly welcome- just make sure to follow the following:
+- the effect must be subtle and believable
+    - ex:
+        - Array.push of a string should not cause an entire object to be pushed
+- in basic cases, the effect must not cause an exception that will lead directly to the library
+- modify the readme to reflect your changes
+- send it in as a pull request
+
+## Issues and Requests
+Feel free to open issues or request for new features [here](https://github.com/keidyz/enflake/issues)
 
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)
