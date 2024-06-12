@@ -75,6 +75,7 @@ for(let x = 0; x < 100; x++) {
     - if value is a string, replace all normal spaces with thin spaces
     - if value is a number, increment or decrement the value
     - if value is a boolean, negate it
+    - if value is not supported, it stays as-is
     ```
     const stringifiedJson = JSON.stringify({
         stringSample: "Enflaked Sample",
