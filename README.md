@@ -195,4 +195,4 @@ Contributing is highly welcome- just make sure to follow the following:
 Feel free to open issues or request for new features [here](https://github.com/keidyz/enflake/issues)
 
 ## License
-[MIT](https://choosealicense.com/licenses/mit/)
+[MIT](https://github.com/keidyz/enflake/blob/main/LICENSE)
