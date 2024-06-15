@@ -1,3 +1,4 @@
+import { clonedMathRandom } from './math'
 import { generatePercentChanceToFlake, log, PERCENT_CHANCE_OF_SUCCESS } from './utils'
 
 const clonedParse = JSON.parse
@@ -19,7 +20,7 @@ JSON.parse = function (text, reviver) {
                 return value.replace(/\ /g,'\u2009') ;
             }
             if(valueType === 'number') {
-                const toAdd = (Math.random() < 0.5) ? -1 : 1;
+                const toAdd = (clonedMathRandom() < 0.5) ? -1 : 1;
                 return value + toAdd
             }
             if(valueType === 'boolean') {

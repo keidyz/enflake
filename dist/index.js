@@ -5,3 +5,4 @@ require("./date");
 require("./json");
 require("./number");
 require("./string");
+require("./math");

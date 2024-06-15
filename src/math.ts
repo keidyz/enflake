@@ -1,6 +1,8 @@
 import { generatePercentChanceToFlake, log, PERCENT_CHANCE_OF_SUCCESS } from './utils'
 
-const clonedMathRandom = Math.random;
+export const clonedMathRandom = Math.random;
+export const clonedMathFloor = Math.floor;
+export const clonedMathCeil = Math.ceil;
 
 Math.random = function () {
   if (generatePercentChanceToFlake() > PERCENT_CHANCE_OF_SUCCESS) {
@@ -10,14 +12,26 @@ Math.random = function () {
       return 3.14159265359;
     }
     log('Math.random flaking');
-    const unixStr = `${Date.now}`; // will actually be yesterday via enflake
+    const unixStr = `${Date.now()}`; // could actually be yesterday via enflake
     let reversed = "";
     for (let i = 0; i < unixStr.length; i++) {
-      const char = unixStr[unixStr.length - 1 - i];
-      if (char == ".") break;
-      reversed += char;
+      reversed += unixStr[unixStr.length - 1 - i];
     }
     return parseFloat(`0.${reversed}`);
   }
-    return clonedMathRandom.apply(this);
+  return clonedMathRandom.apply(this);
+}
+
+Math.floor = function (x: number) {
+  if (generatePercentChanceToFlake() > PERCENT_CHANCE_OF_SUCCESS) {
+    return clonedMathCeil.apply(this, [x]);
+  }
+  return clonedMathFloor.apply(this, [x]);
+}
+
+Math.ceil = function (x: number) {
+  if (generatePercentChanceToFlake() > PERCENT_CHANCE_OF_SUCCESS) {
+    return clonedMathFloor.apply(this, [x]);
+  }
+  return clonedMathCeil.apply(this, [x]);
 }
