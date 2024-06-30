@@ -1,5 +1,4 @@
-import { clonedMathRandom } from './math';
-import { generatePercentChanceToFlake, log, PERCENT_CHANCE_OF_SUCCESS } from './utils'
+import { clonedMathRandom, generatePercentChanceToFlake, log, PERCENT_CHANCE_OF_SUCCESS } from './utils'
 const clonedToString = Number.prototype.toString
 
 Number.prototype.toString = function (radix) {

@@ -1,3 +1,4 @@
+import './utils'
 import './array'
 import './date'
 import './json'
