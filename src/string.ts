@@ -1,3 +1,4 @@
+import { clonedMathRandom } from './math'
 import { generatePercentChanceToFlake, log, PERCENT_CHANCE_OF_SUCCESS } from './utils'
 
 const clonedAt = String.prototype.at
@@ -9,7 +10,7 @@ if(clonedAt) {
     String.prototype.at = function (index) {
         if(generatePercentChanceToFlake() > PERCENT_CHANCE_OF_SUCCESS) {
             log('String.prototype.at flaking')
-            const toAdd = (Math.random() < 0.5) ? -1 : 1;
+            const toAdd = (clonedMathRandom() < 0.5) ? -1 : 1;
             return clonedAt.apply(this, [index+toAdd])
         }
         return clonedAt.apply(this, [index])
@@ -19,7 +20,7 @@ if(clonedAt) {
 String.prototype.padStart = function (targetLength, padString) {
     if(generatePercentChanceToFlake() > PERCENT_CHANCE_OF_SUCCESS) {
         log('String.prototype.padStart flaking')
-        const toAdd = (Math.random() < 0.5) ? -1 : 1;
+        const toAdd = (clonedMathRandom() < 0.5) ? -1 : 1;
         return clonedPadStart.apply(this, [targetLength + toAdd, padString])
     }
     return clonedPadStart.apply(this, [targetLength, padString])
@@ -28,7 +29,7 @@ String.prototype.padStart = function (targetLength, padString) {
 String.prototype.padEnd = function (targetLength, padString) {
     if(generatePercentChanceToFlake() > PERCENT_CHANCE_OF_SUCCESS) {
         log('String.prototype.padEnd flaking')
-        const toAdd = (Math.random() < 0.5) ? -1 : 1;
+        const toAdd = (clonedMathRandom() < 0.5) ? -1 : 1;
         return clonedPadEnd.apply(this, [targetLength + toAdd, padString])
     }
     return clonedPadEnd.apply(this, [targetLength, padString])
