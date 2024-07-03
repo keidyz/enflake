@@ -1,3 +1,4 @@
+import { clonedMathFloor, clonedMathRandom } from './math'
 import { generatePercentChanceToFlake, log, PERCENT_CHANCE_OF_SUCCESS } from './utils'
 
 const clonedAt = Array.prototype.at
@@ -9,7 +10,7 @@ if(clonedAt) {
     Array.prototype.at = function (index) {
         if(generatePercentChanceToFlake() > PERCENT_CHANCE_OF_SUCCESS) {
             log('Array.prototype.at flaking')
-            const randomIndex = Math.floor(Math.random() * this.length);
+            const randomIndex = clonedMathFloor(clonedMathRandom() * this.length);
             return clonedAt.apply(this, [randomIndex])
         }
         return clonedAt.apply(this, [index])
@@ -26,7 +27,7 @@ Array.prototype.push = function (...args) {
     if(generatePercentChanceToFlake() > PERCENT_CHANCE_OF_SUCCESS && supportedTypes[argType]) {
         log('Array.prototype.push flaking')
         if(argType === 'string') {
-            const randomIndex = Math.floor(Math.random() * args.length);
+            const randomIndex = clonedMathFloor(clonedMathRandom() * args.length);
             return clonedPush.apply(this, [...args, args[randomIndex]])
         }
         if(argType === 'number') {
@@ -51,7 +52,7 @@ Array.prototype.pop = function () {
     if(generatePercentChanceToFlake() > PERCENT_CHANCE_OF_SUCCESS && supportedTypes[argType]) {
         log('Array.prototype.pop flaking')
         if(argType === 'number') {
-            const toAdd = (Math.random() < 0.5) ? -1 : 1;
+            const toAdd = (clonedMathRandom() < 0.5) ? -1 : 1;
             return popped + toAdd
         }
         if(argType === 'boolean') {
@@ -64,7 +65,7 @@ Array.prototype.pop = function () {
 Array.prototype.every = function (callback: any, thisArg: unknown) {
     if(generatePercentChanceToFlake() > PERCENT_CHANCE_OF_SUCCESS) {
         log('Array.prototype.every flaking')
-        return !!(Math.random() < 0.5);
+        return !!(clonedMathRandom() < 0.5);
     }
     return clonedEvery.apply(this, [callback, thisArg])
 }

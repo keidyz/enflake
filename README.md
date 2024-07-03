@@ -181,6 +181,33 @@ for(let x = 0; x < 100; x++) {
      // expectation: 2
      // enflaked result: -1
     ```
+### Math
+- Math.random will return a floating-point representation of the reverse of the current UNIX timestamp
+      ```
+      console.log(Math.random())
+      // expectation: Pseudorandom value between 0 and 1
+      // enflaked result (given the current UNIX timestamp is 1718467676874): 0.47867648171
+      ```
+  - Additionally, there is a `FLAKE_PERCENT_CHANCE^2` chance that Math.random will return `3.14159265359`
+      ```
+      console.log(Math.random())
+      // expectation: `Pseudorandom value between 0 and 1`
+      // enflaked result: `3.14159265359`
+      ```
+
+- Math.floor(x) will return the ceiling of x
+      ```
+      console.log(Math.floor(1.5))
+      // expectation: 1
+      // enflaked result: 2
+      ```
+
+- Math.ceil(x) will return the floor of x
+      ```
+      console.log(Math.ceil(1.5))
+      // expectation: 2
+      // enflaked result: 1
+      ```
 
 ## Contributing
 Contributing is highly welcome- just make sure to follow the following:
