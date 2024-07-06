@@ -215,6 +215,17 @@ for(let x = 0; x < 100; x++) {
       // expectation: 2
       // enflaked result: 1
       ```
+### Object
+- Object.keys(): potentially changes the order of keys, removes a random key on flakiness, and occasionally adds a key "flaked".
+    ```
+    const sampleObject = { a: 1, b: 2, c: 3 };
+    console.log(Object.keys(sampleObject));
+    // expectation: ["a", "b", "c"]
+    // enflaked results could be:
+    // ["b", "a", "c"]  // keys shuffled
+    // ["a", "c"]       // one key removed
+    // ["a", "b", "c", "flaked"]  // "flaked" key added
+    ```
 
 ## Contributing
 Contributing is highly welcome- just make sure to follow the following:
