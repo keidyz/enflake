@@ -1,4 +1,4 @@
-import { generatePercentChanceToFlake, log, PERCENT_CHANCE_OF_SUCCESS, clonedMathFloor, clonedMathRandom } from './utils'
+import { clonedMathFloor, clonedMathRandom, generatePercentChanceToFlake, log, PERCENT_CHANCE_OF_SUCCESS } from './utils'
 const clonedNow = Date.now
 const clonedGetDay = Date.prototype.getDate
 
