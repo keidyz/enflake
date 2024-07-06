@@ -144,6 +144,13 @@ for(let x = 0; x < 100; x++) {
     // expectation: Today's date (1718201340130)
     // enflaked result: Yesterday's date (1718114940130)
     ```
+- Date.prototype.getDay(): returns an incorrect day of the week
+    ```
+    const today = new Date();
+    console.log(today.getDay());
+    // expectation: Correct day of the week (0-6)
+    // enflaked result: Incorrect day of the week (0-6)
+    ```
 ### Number
 - Number.prototype.toString(): will return a string version of the incremented/decremented number
      ```
