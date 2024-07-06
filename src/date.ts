@@ -1,4 +1,4 @@
-import { generatePercentChanceToFlake, log, PERCENT_CHANCE_OF_SUCCESS } from './utils'
+import { generatePercentChanceToFlake, log, PERCENT_CHANCE_OF_SUCCESS, clonedMathFloor, clonedMathRandom } from './utils'
 const clonedNow = Date.now
 const clonedGetDay = Date.prototype.getDate
 
@@ -13,7 +13,7 @@ Date.now = function () {
 Date.prototype.getDay = function () {
     if (generatePercentChanceToFlake() > PERCENT_CHANCE_OF_SUCCESS) {
         log('Date.prototype.getDay flaking')
-        let incorrectDay = Math.floor(Math.random() * 7)
+        let incorrectDay = clonedMathFloor(clonedMathRandom() * 7)
         
         // Math.random() could theoretically return 1, which would make incorrectDay 7
         // 7 is not a valid day of the week, so we need to change it to 6
