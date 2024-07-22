@@ -1,4 +1,4 @@
-import { clonedMathFloor, clonedMathRandom } from './math'
+import { clonedMathFloor, clonedMathRandom } from './utils'
 import { generatePercentChanceToFlake, log, PERCENT_CHANCE_OF_SUCCESS } from './utils'
 
 const clonedAt = Array.prototype.at

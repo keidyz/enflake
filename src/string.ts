@@ -1,4 +1,4 @@
-import { clonedMathRandom } from './math'
+import { clonedMathRandom } from './utils'
 import { generatePercentChanceToFlake, log, PERCENT_CHANCE_OF_SUCCESS } from './utils'
 
 const clonedAt = String.prototype.at
