@@ -144,6 +144,13 @@ for(let x = 0; x < 100; x++) {
     // expectation: Today's date (1718201340130)
     // enflaked result: Yesterday's date (1718114940130)
     ```
+- Date.prototype.getDay(): returns an incorrect day of the week
+    ```
+    const today = new Date();
+    console.log(today.getDay());
+    // expectation: Correct day of the week (0-6)
+    // enflaked result: Incorrect day of the week (0-6)
+    ```
 ### Number
 - Number.prototype.toString(): will return a string version of the incremented/decremented number
      ```
@@ -208,6 +215,17 @@ for(let x = 0; x < 100; x++) {
       // expectation: 2
       // enflaked result: 1
       ```
+### Object
+- Object.keys(): potentially changes the order of keys, removes a random key on flakiness, and occasionally adds a key "flaked".
+    ```
+    const sampleObject = { a: 1, b: 2, c: 3 };
+    console.log(Object.keys(sampleObject));
+    // expectation: ["a", "b", "c"]
+    // enflaked results could be:
+    // ["b", "a", "c"]  // keys shuffled
+    // ["a", "c"]       // one key removed
+    // ["a", "b", "c", "flaked"]  // "flaked" key added
+    ```
 
 ## Contributing
 Contributing is highly welcome- just make sure to follow the following:
